@@ -1,0 +1,11 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = 'aoc.day01.Main'
+}
+
+repositories {
+    mavenCentral()
+}
