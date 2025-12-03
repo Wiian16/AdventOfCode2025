@@ -26,7 +26,7 @@ fn parse_input(input: String) -> Vec<i32> {
             return;
         }
 
-        let direction: char = line.chars().nth(0).unwrap();
+        let direction: char = line.chars().next().unwrap();
         let amount: i32 = line[1..].parse::<i32>().unwrap();
 
         match direction {
@@ -44,7 +44,7 @@ fn compute_part_one(rotations: &[i32]) -> i32 {
     let mut passcode = 0;
 
     rotations.iter().for_each(|rotation| {
-        position = ((position + rotation) % 100 + 100) % 100;
+        position = (position + rotation).rem_euclid(100);
 
         if position == 0 {
             passcode += 1;
@@ -75,7 +75,7 @@ fn compute_part_two(rotations: &[i32]) -> i32 {
             }
         }
 
-        position = (new_pos % 100 + 100) % 100;
+        position = new_pos.rem_euclid(100);
     });
 
     passcode
