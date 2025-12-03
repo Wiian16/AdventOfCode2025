@@ -4,3 +4,7 @@
 
 My answer for part 1: 1097
 My answer for part 2: 7101
+
+## Usage 
+
+`java Main <input-file>`
